@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  namesake :api
-  namesake :v1
-  resources :transactions
-  resources :accounts
+
+  namespace :api do
+    namespace :vi do
+      resources :transactions
+      resources :accounts
+  end
+end
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
