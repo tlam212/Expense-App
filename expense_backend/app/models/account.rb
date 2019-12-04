@@ -11,6 +11,8 @@ class Account < ApplicationRecord
       if self.balance >= transaction.amount
       self.balance = self.balance - transaction.amount
       self.save
+    else
+      return "Your balance is low"
   end
 
 

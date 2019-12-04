@@ -2,8 +2,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :vi do
+      resources :accounts do
       resources :transactions
-      resources :accounts
+    end
   end
 end
 
