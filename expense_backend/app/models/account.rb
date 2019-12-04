@@ -13,29 +13,9 @@ class Account < ApplicationRecord
       self.save
     else
       return "Your balance is low"
+    end
   end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  end
 
 
 

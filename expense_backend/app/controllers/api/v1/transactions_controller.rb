@@ -3,15 +3,15 @@ class Api::V1::TransactionsController < ApplicationController
   before_action :find_account
 
   def index
-    render json: @account.transaction
+    render json: @account.transactions
   end
 
   def show
-    render json: @account.transaction.find_by(:id params[:id])
+    render json: @account.transactions.find_by(:id params[:id])
   end
 
   def create
-    @transaction = @account.transaction.new(t_params)
+    @transaction = @account.transactions.new(t_params)
     if @account.update_balance(@tranaction) != "Your balance is low"
       @transaction.save
       render json: @transaction
@@ -29,6 +29,6 @@ end
   end
 
   def t_params
-    params.require(:transaction).permit(:account_id, :type, :description, :amount, :date)
+    params.require(:transaction).permit(:account_id, :trans_type, :description, :amount, :date)
   end
 end
