@@ -1,4 +1,6 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {getAccounts} from './actions/getAccounts';
 import './App.css';
 
 class App extends React.Component{
@@ -11,9 +13,16 @@ class App extends React.Component{
   render(){
     return (
       <div>
-      rrgeakgthktog
+    app
       </div>
     )
   }
 }
-export default App
+
+const mapStateToProps = (state) => {
+  return {
+    accounts: state.accounts
+  }
+}
+
+export default connect(null, {getAccounts})(App)
